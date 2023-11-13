@@ -3,6 +3,7 @@
 #include <vector>
 
 #include "easyfind.hpp"
+
 int	main()
 {
 	std::vector<int>	v;
@@ -14,13 +15,13 @@ int	main()
 	v.push_back(5);
 	v.push_back(5);
 
-	std::cout << &(easyfind(v, 2)) << '\n';
-	std::cout << &v[1] << '\n';
-	std::cout << &v[3] << "\n\n";
+	// std::cout << &(easyfind(v, 2)) << '\n';
+	// std::cout << &v[1] << '\n';
+	// std::cout << &v[3] << "\n\n";
 
-	std::cout << &(easyfind(v, 5)) << '\n';
-	std::cout << &v[4] << '\n';
-	std::cout << &v[5] << '\n';
+	// std::cout << &(easyfind(v, 5)) << '\n';
+	// std::cout << &v[4] << '\n';
+	// std::cout << &v[5] << '\n';
 
 	return 0;
 }
