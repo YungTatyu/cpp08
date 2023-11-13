@@ -1,0 +1,6 @@
+easyfind_test.findTarget_vector 1 0.0075265
+easyfind_test.findTarget_deque 1 0.00225666
+easyfind_test.findTarget_list 1 0.00203782
+easyfind_test.findTarget_set 1 0.00204885
+easyfind_test.throwException 1 0.00203696
+---

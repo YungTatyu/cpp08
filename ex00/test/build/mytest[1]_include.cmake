@@ -1,0 +1,5 @@
+if(EXISTS "/Users/tterao/Documents/cursus/cpp08/ex00/test/build/mytest[1]_tests.cmake")
+  include("/Users/tterao/Documents/cursus/cpp08/ex00/test/build/mytest[1]_tests.cmake")
+else()
+  add_test(mytest_NOT_BUILT mytest_NOT_BUILT)
+endif()
