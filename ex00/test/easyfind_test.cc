@@ -9,6 +9,8 @@
 #include <list>
 #include <set>
 
+
+//シーケンスコンテナのテスト
 TEST(easyfind_test, findTarget_vector) {
 
 	const std::vector<int>	v = {1, 2, 300, 1000, -200, -3};
@@ -45,6 +47,7 @@ TEST(easyfind_test, findTarget_list) {
 	}
 }
 
+// 連想コンテナのテスト
 TEST(easyfind_test, findTarget_set) {
 
 	const std::set<int>	set = {1, 2, 300, 1000, -200, -3};
@@ -57,6 +60,7 @@ TEST(easyfind_test, findTarget_set) {
 	}
 }
 
+// 例外処理のテスト
 TEST(easyfind_test, throwException) {
 
 	const std::vector<int>	v = {1, 2, 300, 1000, -200, -3};

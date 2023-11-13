@@ -2,17 +2,25 @@
 #include <iostream>
 #include <vector>
 
+#include "easyfind.hpp"
 int	main()
 {
 	std::vector<int>	v;
-	v.reserve(100);
+	v.reserve(10);
 	v.push_back(1);
 	v.push_back(2);
 	v.push_back(3);
-	v.push_back(4);
+	v.push_back(2);
 	v.push_back(5);
-	std::cout << v.capacity() << "\n";
-	v.erase(v.begin(), v.end());
-	std::cout << v.capacity() << "\n";
+	v.push_back(5);
+
+	std::cout << &(easyfind(v, 2)) << '\n';
+	std::cout << &v[1] << '\n';
+	std::cout << &v[3] << "\n\n";
+
+	std::cout << &(easyfind(v, 5)) << '\n';
+	std::cout << &v[4] << '\n';
+	std::cout << &v[5] << '\n';
+
 	return 0;
 }
