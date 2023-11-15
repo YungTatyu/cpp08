@@ -31,7 +31,7 @@ TEST(Span_test, random_numbers) {
 	Span	s(10);
 
 	// sの値を初期化
-	int	mul = 0
+	int	mul = 0;
 	for (size_t i = 0; i < 10; i++)
 	{
 		s.addNumber(i * mul);
@@ -56,7 +56,7 @@ TEST(Span_test, exeption_tooManyNum) {
 			s1.addNumber(1);
 			s1.addNumber(2);
 		},
-		std::runtimeerror
+		std::runtime_error
 	);
 
 	Span	s2(0);
@@ -65,7 +65,7 @@ TEST(Span_test, exeption_tooManyNum) {
 		{
 			s2.addNumber(1);
 		},
-		std::runtimeerror
+		std::runtime_error
 	);
 }
 
@@ -77,14 +77,14 @@ TEST(Span_test, exeption_no_numbers_stored) {
 		{
 			s.shortestSpan();
 		},
-		std::runtimeerror
+		std::runtime_error
 	);
 
 	EXPECT_THROW(
 		{
 			s.longestSpan();
 		},
-		std::runtimeerror
+		std::runtime_error
 	);
 }
 
@@ -94,16 +94,29 @@ TEST(Span_test, exeption_only_one_stored) {
 
 	EXPECT_THROW(
 		{
-			s.addNum(1);
+			s.addNumber(1);
 			s.shortestSpan();
 		},
-		std::runtimeerror
+		std::runtime_error
 	);
 
 	EXPECT_THROW(
 		{
 			s.longestSpan();
 		},
-		std::runtimeerror
+		std::runtime_error
+	);
+}
+
+TEST(Span_test, exeption_nospan) {
+	Span	s(100);
+
+	EXPECT_THROW(
+		{
+			s.addNumber(10);
+			s.addNumber(10);
+			s.shortestSpan();
+		},
+		std::runtime_error
 	);
 }

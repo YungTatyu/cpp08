@@ -6,7 +6,8 @@ ifdef	DEBUG
 endif
 
 SRCS_DIR = src
-SRC = main.cpp
+SRC = main.cpp	\
+	  Span.cpp
 SRCS = $(addprefix $(SRCS_DIR)/, $(SRC))
 
 INCLUDES_DIR = include

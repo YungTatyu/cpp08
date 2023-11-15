@@ -18,7 +18,8 @@ enable_testing()
 
 add_executable(
   mytest
-  test/easyfind_test.cc
+  src/Span.cpp
+  test/Span_test.cc
 )
 
 include_directories(

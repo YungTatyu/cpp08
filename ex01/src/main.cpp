@@ -1,36 +1,25 @@
 
 #include <iostream>
-#include <vector>
-#include <deque>
-
-#include "easyfind.hpp"
+#include <limits>
+#include "Span.hpp"
 
 int	main()
 {
-	std::vector<int>	v;
-	v.reserve(10);
-	std::cout << v.capacity() << '\n';
-	v.push_back(1);
-	std::cout << v.capacity() << '\n';
-	v.push_back(2);
-	std::cout << v.capacity() << '\n';
+	Span	span(100000);
+	// std::vector<int>	v;
 
-	v.push_back(3);
-	v.push_back(2);
-	std::cout << v.capacity() << '\n';
-	v.push_back(5);
-	v.push_back(5);
-	std::cout << v.capacity() << '\n';
-	v.clear();
-	std::cout << "after clear " << v.capacity() << '\n';
+	// std::cout << v.back() << '\n';
+	// v.push_back(1);
 
-	std::cout << &(easyfind(v, 2)) << '\n';
-	std::cout << &v[1] << '\n';
-	std::cout << &v[3] << "\n\n";
+	std::cout << static_cast<long>(INT_MAX) - INT_MIN << '\n';
+	std::cout << UINT_MAX << '\n';
 
-	std::cout << &(easyfind(v, 5)) << '\n';
-	std::cout << &v[4] << '\n';
-	std::cout << &v[5] << '\n';
+	// span.addNumber(1, 10000);
+
+	span.addNumber(INT_MIN);
+	span.addNumber(INT_MAX);
+	std::cout << "longest=" << span.longestSpan() << '\n';
+	std::cout << "shortest=" << span.shortestSpan() << '\n';
 
 	return 0;
 }

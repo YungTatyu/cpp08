@@ -6,10 +6,11 @@
 class Span
 {
 private:
-	std::vector<int>	_nums;
-	unsigned int	_num_stored;
+	std::vector<int>	_numbers;
+	unsigned int	_max_capacity;
 	unsigned int	_shortest_span;
 	unsigned int	_longest_span;
+	const static int	_kNumRequiredElement = 2; // spanの計算に必要な最低要素数
 	Span();
 public:
 	Span(unsigned int N);
@@ -18,8 +19,8 @@ public:
 	Span&	operator=(const Span& other);
 	void	addNumber(int num);
 	void	addNumber(int begin, int end);
-	const int&	shortestSpan() const;
-	const int&	longestSpan() const;
+	const unsigned int&	shortestSpan() const;
+	const unsigned int&	longestSpan() const;
 };
 
 #endif
