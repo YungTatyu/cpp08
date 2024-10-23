@@ -24,7 +24,7 @@ add_executable(
 
 include_directories(
   mytest
-  include
+  src
 )
 
 target_link_libraries(
