@@ -18,12 +18,12 @@ enable_testing()
 
 add_executable(
   mytest
-  test/easyfind_test.cc
+  test/easyfind_test.cpp
 )
 
 include_directories(
   mytest
-  include
+  src
 )
 
 target_link_libraries(
