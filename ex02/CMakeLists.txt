@@ -18,6 +18,8 @@ enable_testing()
 
 add_executable(
   mytest
+  src/MutantStack.hpp
+  test/mutantstack_test.cpp
 )
 
 include_directories(

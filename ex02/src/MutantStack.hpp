@@ -2,29 +2,45 @@
 #define MUTANT_STACK_HPP
 
 #include <deque>
-#include <iostream>
-#include <list>
 #include <stack>
-#include <vector>
 
-template <class T, class Container = std::deque<T>>
+template <class T, class Container = std::deque<T> >
 class MutantStack : public std::stack<T, Container> {
 public:
   typedef typename Container::iterator iterator;
   typedef typename Container::reverse_iterator reverse_iterator;
 
+  /*iterator begin() { return this->c.begin(); }*/
+  /*iterator end() { return this->c.end(); }*/
+  /*reverse_iterator rbegin() { return this->c.rbegin(); }*/
+  /*reverse_iterator rend() { return this->c.rend(); }*/
   iterator begin();
   iterator end();
   reverse_iterator rbegin();
   reverse_iterator rend();
 };
 
-MutantStack::iterator MutantStack::begin() { return this->c.begin(); }
+template <class T, class Container>
+typename MutantStack<T, Container>::iterator
+MutantStack<T, Container>::begin() {
+  return this->c.begin();
+}
 
-MutantStack::iterator MutantStack::end() { return this->c.end(); }
+template <class T, class Container>
+typename MutantStack<T, Container>::iterator MutantStack<T, Container>::end() {
+  return this->c.end();
+}
 
-MutantStack::reverse_iterator MutantStack::rbegin() { return this->c.rbegin(); }
+template <class T, class Container>
+typename MutantStack<T, Container>::reverse_iterator
+MutantStack<T, Container>::rbegin() {
+  return this->c.rbegin();
+}
 
-MutantStack::reverse_iterator MutantStack::rend() { return this->c.rend(); }
+template <class T, class Container>
+typename MutantStack<T, Container>::reverse_iterator
+MutantStack<T, Container>::rend() {
+  return this->c.rend();
+}
 
 #endif
