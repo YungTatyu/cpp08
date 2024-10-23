@@ -9,8 +9,7 @@ SRCS_DIR = src
 SRC = main.cpp
 SRCS = $(addprefix $(SRCS_DIR)/, $(SRC))
 
-INCLUDES_DIR = include
-INCLUDES = -I$(INCLUDES_DIR)
+INCLUDES = -I$(SRCS_DIR)
 OBJS_DIR = obj
 OBJS = $(patsubst $(SRCS_DIR)/%.cpp, $(OBJS_DIR)/%.o,$(SRCS))
 DEPS = $(patsubst $(SRCS_DIR)/%.cpp, $(OBJS_DIR)/%.d,$(SRCS))
