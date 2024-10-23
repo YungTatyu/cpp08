@@ -25,6 +25,15 @@ void ExpectIteratorLoop(const std::vector<T> &expect, MutantStack<T> &stack) {
     ++i;
   });
 }
+
+template <typename T>
+void ExpectRIteratorLoop(const std::vector<T> &expect, MutantStack<T> &stack) {
+  std::vector<T> actual;
+  for (auto it = stack.rbegin(); it != stack.rend(); ++it) {
+    actual.push_back(*it);
+  }
+  EXPECT_TRUE(actual == expect);
+}
 } // namespace test
 
 TEST(mutantstack_test, begin) {
@@ -51,4 +60,13 @@ TEST(mutantstack_test, iterator_loop) {
   const std::vector<std::string> v = {"this", "is", "test", "period"};
   test::Setup(v, stack);
   test::ExpectIteratorLoop(v, stack);
+}
+
+TEST(mutantstack_test, riterator_loop) {
+
+  MutantStack<std::string> stack;
+  const std::vector<std::string> v = {"this", "is", "test", "period"};
+  const std::vector<std::string> expect(v.rbegin(), v.rend());
+  test::Setup(v, stack);
+  test::ExpectRIteratorLoop(expect, stack);
 }
